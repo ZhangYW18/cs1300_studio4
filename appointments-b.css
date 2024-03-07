@@ -44,22 +44,31 @@
     margin-bottom: 17px;
 }
 
-.appointment-row {
+.appointment-rows {
+    width: 100%;
     display: flex;
     flex-direction: row;
+}
+
+.appointment-row {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-bottom: 15px;
+    width: 33%;
 }
 
 .appointment-date {
     display: flex;
     flex-direction: column;
     margin-right: 25px;
+    text-align:center;
 
 .date-text {
     margin-top: 0;
     margin-bottom: 0;
-    text-align: right;
+    text-align: center;
     font-size: 24px;
     font-family: 'PPNeueMontrealThin';
 }
@@ -70,6 +79,7 @@
     flex-direction: column;
     justify-content: center;
     min-width: 280px;
+    text-align:center;
 
 .appointment-title, .appointment-text {
     margin-top: 0;
@@ -92,10 +102,9 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-left: 45%;
 
 .defunct-button, .working-button {
-    background-color: #D4E8FF;
+    background-color: #1b5bff;
     border: none;
     border-radius: 9px;
     width: 180px;
@@ -131,4 +140,57 @@
 .success-dialog::backdrop {
     background-color: black;
     opacity: 20%;
+}
+
+:root {
+    /* colors */
+    --theme-lightest: #FFF6F6;
+    --theme-light: #F8E3E3;
+    --theme-normal: #FFB1B1;
+    --theme-dark: #FF0205;
+    --footer-color: #182F82;
+    --link-color: #0000FF;
+    --hovered-link-color: #00008F;
+}
+
+.hours-calendar {
+    display: flex;
+    justify-content: center;
+}
+
+.calendar {
+    width: 250px;
+    height: 240px;
+}
+
+.calendar .calendar-caption {
+    display: none;
+}
+
+.calendar .grid {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.calendar .label {
+    text-align: center;
+}
+
+.calendar tbody .grid:hover, .calendar .label:hover {
+    background: var(--theme-lightest);
+    cursor: pointer;
+}
+
+.calendar .prev, .calendar .next {
+    color: blue;
+}
+
+.calendar .today {
+    background: var(--footer-color);
+    color: white;
+}
+
+.calendar .today:hover {
+    color: black;
 }
